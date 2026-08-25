@@ -1,14 +1,14 @@
 class Objeto:
 
-    def __init__(self,nombre,tipo):
+    def __init__(self, nombre, tipo): 
+
         self.nombre = nombre
         self.tipo = tipo
 
-    def mostrar_info(self):
+    def mostrar_informacion(self):
         print(f"Objeto {self.nombre}")
         print(f"Tipo {self.tipo}")
 
-
-
-
         
+
+    
