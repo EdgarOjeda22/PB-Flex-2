@@ -1,5 +1,6 @@
 from inventario import Inventario
 
+# clase Personaje
 
 class Personaje:
     
@@ -10,24 +11,26 @@ class Personaje:
 
         self.inventario = Inventario()
 
-
     def atacar(self):
-        print (f"{self.nombre} realiza un ataque.")
-    
+        print( f"{self.nombre} realiza un ataque.")
+
     
     def recibir_danio(self, danio):
+
         self.vida -= danio
-
-        if self.vida <0:
+        # self.vida = self.vida - danio
+        
+        if self.vida < 0:
             self.vida = 0
+        
+        print(f"{self.nombre} recibió {danio} puntos de daño")
+        print(f"La vida actual es: {self.vida}")
 
-
-            print(f"{self.nombre} recibó {danio} puntos de daño")
-            print(f"La vida actual es:")
+    def usar_habilidad(self):
+        print(f"{self.nombre} utiliza una habilidad")
 
     def mostrar_informacion(self):
-        print("\n---INFORmACION DEL PF---")
+        print("\n ---INFORMACION DEL PJ ---")
         print(f"Nombre: {self.nombre}")
-        print(f"Nivel: {self.nivel}")
-        print(f"Vida: {self.vida}")
-        
+        print(f"Nivel: {self.nivel} ")
+        print(f"Vida:  {self.vida}" )
