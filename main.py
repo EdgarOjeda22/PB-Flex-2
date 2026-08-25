@@ -1,98 +1,93 @@
 from jugador import Jugador
-from mago import Mago 
-from objeto import Objeto
+from mago import Mago
 from guerrero import Guerrero
+from objeto import Objeto
 
 
+#Método principal
 
 def main():
     pass
-    #-----------------------
-    #-----CREAR JUGADOR-----
-    #-------------------------
 
+    # =========
+    # CREAR JUGADOR
+    # =========
 
-    nuevo_jugador = Jugador("Edgar")
-    jugador2 = ("Carlos")
+    new_player = Jugador("Eric")
+    player_two = Jugador ("Rafael")
 
-    #--------------------------
-   # -----CREAR PERSONAJE------
-   # --------------------------
+    # ========
+    # CREAR PJS
+    # ========
 
-    mago1 = Mago("Gandalf",12,50,150)
-    jugador2 = Guerrero("Kratos",12,12,12)
- 
+    magician = Mago("Gandalf", 12, 50, 150) 
 
-    #-----------------------
+    warrior = Guerrero("Aragorn", 10, 100, 80)
+    
+    # ========
     # ASOCIAR JUGADOR CON PJ
-    #---------------------- 
-    
+    # ========
+    new_player.seleccionar_personaje(magician)
 
-    nuevo_jugador.selecccionar_personaje(mago1)
-    nuevo_jugador.mostrar_personaje()
+    new_player.mostrar_personaje()
 
-    nuevo_jugador.selecccionar_personaje(jugador2)
-    nuevo_jugador.mostrar_personaje()
+    #JUGADOR 2
+    player_two.seleccionar_personaje(warrior)
 
-    #-----------------------
+    player_two.mostrar_personaje()
+
+
+    # ========
     # ATAQUE DEL MAGO
-    #---------------------- 
+    # ========
+    magician.atacar()
 
-    mago1.atacar()
-    jugador2.atacar()
-
-
-
-    #-----------------------
+    # ========
     # HABILIDAD DEL MAGO
-    #----------------------
+    # ========
+    magician.usar_habilidad()
 
-    mago1.usar_habilidad()
-    jugador2.usar_habilidad()
+    # ========
+    # CREAR OBJETOS
+    # ========
+    pocion = Objeto("Poción de vida", "Consumible")
+    staff = Objeto("Staff del Arcangel", "Arma")
 
+    # ========
+    # Agregar OBJETOS AL INVENTARIO
+    # ========
+    magician.inventario.agregar_objetos(pocion)
+    magician.inventario.agregar_objetos(staff)
 
-    #-----------------------
-    # CREAR OBJETO
-    #----------------------
+    # ========
+    # Mostrar Inventario
+    # ========
+    magician.inventario.mostrar_inventario()  
 
-    pocion = Objeto("Poción de vida","Consumible")
-    staff = Objeto("Staff del Arcangel","Arma")
-
-    ataque1 = Objeto("doble espada")
-    ataque2 = object("Filo doble")
-    
-    #-----------------------
-    # AGREGAR OBJETOS AL INVENTARIO
-    #----------------------
-    
-    
-    mago1.inventario.agregar_objetos(pocion)
-    mago1.inventario.agregar_objetos(staff)
-
-
-
-    #-----------------------
-    # MOSTRAR INVENTARIO    
-    #----------------------
-
-    mago1.inventario.mostrar_inventario()
-
-
-    #-----------------------
+    # ========
     # RECIBIR DAÑO
-    #----------------------
+    # ========
+
+    magician.recibir_danio(20)
+
+
+    #ATAQUE
+    warrior.atacar()
+
+    #MOSTRAR INFO
+    warrior.mostrar_informacion()
+
+    #USAR HABILIDADES Y ATACAR
+
+    warrior.atacar()
+    warrior.usar_habilidad()
+
+    #CREAR OBJETOS Y AGREGARLOS INVENTARIO
+
+    escudo = Objeto("Escudo de Hyrule", "escudo")
+    espada = Objeto("Excalibur", "arma")
+
     
 
-    mago1.recibir_danio(12)
-
-
-
-
-
-
-if __name__ =="__main__":
+if __name__ == "__main__":
     main()
-
-
-
-
