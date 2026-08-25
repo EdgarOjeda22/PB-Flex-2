@@ -1,26 +1,22 @@
-
 class Jugador:
-
-    def __init__(self,nombre):
+    
+    def __init__(self, nombre):
 
         self.nombre = nombre
         self.personaje = None
 
-
-    def selecccionar_personaje(self, personaje):
+    def seleccionar_personaje(self, personaje):
 
         self.personaje = personaje
 
-        print(f"{self.nombre} seleccionó al pj"f"  {personaje.nombre}")
-    
+        print(f"{self.nombre} seleccionó al pj"  
+              f" {personaje.nombre}") 
 
     def mostrar_personaje(self):
 
         if self.personaje is not None:
-            print(f"El jugador {self.nombre} "f"utliza a {self.personaje.nombre}")
+            print(f"El jugador {self.nombre}"
+                  f" utiliza a {self.personaje.nombre}")
 
-        else:
-            print("El jugador no a seleccionado a ningun personaje")
-
-                  
-
+        else: 
+            print("El jugador no tiene un personaje seleccionado.") 
